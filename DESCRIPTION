@@ -1,0 +1,12 @@
+Package: gdx
+Type: Package
+Title: readGDX library for R
+Version: 1.42.1
+Date: 2017-06-26
+Author: Jan Philipp Dietrich, Markus Bonsch
+Maintainer: Jan Philipp Dietrich <dietrich@pik-potsdam.de>
+Description: A wrapper library for the gdxrrw extending its functionality and allowing to read GDX files directly in R.
+Depends: gdxrrw, magclass(>= 2.43)
+License: BSD_2_clause + file LICENSE
+LazyData: yes
+RoxygenNote: 6.0.1

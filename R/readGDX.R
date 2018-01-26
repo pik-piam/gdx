@@ -4,9 +4,6 @@
 #' which is now based on magclass structures rather than array structures.
 #' 
 #' 
-#' @usage
-#' readGDX(gdx,...,types=c("sets","equations","parameters","variables","aliases"),field="All",format="simplest",restore_zeros=TRUE,
-#' react="warning", select=NULL, collapseNames=TRUE)
 #' @param gdx Either file name of a gdx file or an already read in gdx (in the
 #' latter case readGDX just acts as a filter. This can be useful if you want to
 #' apply several functions on the same gdx file. In that case you could read in

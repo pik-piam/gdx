@@ -7,7 +7,6 @@
 #' functions.
 #' 
 #' 
-#' @usage inp(gdx,name,...,react="warning",as.magpie=FALSE)
 #' @param gdx a GDX list as created by readGDX, or the file name of a gdx file
 #' (file name is recommended as this speeds up the code)
 #' @param name name of the parameter or set that should be read

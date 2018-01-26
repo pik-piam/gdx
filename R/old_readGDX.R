@@ -3,8 +3,6 @@
 #' Function to read gdx files in R. - \bold{DEPRECEATED!}
 #' 
 #' 
-#' @usage old_readGDX(file,...,restore_zeros=NULL,
-#' types=c("sets","equations","parameters","variables","aliases"),field="All",format="simplest")
 #' @param file File name of the gdx file
 #' @param ... search strings defining the objects that should be read from gdx
 #' file, with *-autocompletion. Can also be vectors containing more than one

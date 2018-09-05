@@ -18,7 +18,9 @@
 #' (marginal), "lo" (lower bound), "up" (upper bound) and "s" (scaling factor).
 #' In the case that the level value is not part of the field value (all options
 #' other than "All" and "l") only data for equations and variables are returned
-#' as all other types do not have this kind of information
+#' as all other types do not have this kind of information. WARNING: field has to
+#' be set to "All" if the data is planned to be written back to a GDX. Otherwise
+#' writeGDX will not work!
 #' @param format Output format. Five choices are currently available
 #' \code{detailed}, \code{simple}, \code{simplest}, \code{raw} and
 #' \code{first_found}. Instead of writing the full format name each format has

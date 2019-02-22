@@ -79,6 +79,10 @@
 #' \code{\link[magclass]{mselect}} for more information.
 #' @param collapseNames Boolean which determines whether collapseNames should
 #' be applied in \code{\link[magclass]{mselect}} or not.
+#' @param magpie_cells (boolean) determines whether a set "j" gets special treatment
+#' by replacing underscores in the set elements with dots. Active by default for
+#' historical reasons. Can be ignored in most cases. Makes only a difference, if 
+#' 1) GDX element depends on set "j", 2) set "j" contains underscores.
 #' @return The gdx objects read in the format set with the argument
 #' \code{format}.
 #' @author Jan Philipp Dietrich
@@ -92,9 +96,9 @@
 #' 
 #' 
 #' 
-readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables","aliases"),field="All",format="simplest",restore_zeros=TRUE, react="warning", select=NULL, collapseNames=TRUE) {
+readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables","aliases"),field="All",format="simplest",restore_zeros=TRUE, react="warning", select=NULL, collapseNames=TRUE, magpie_cells=TRUE) {
   
-.rgdx2array <- function(x) {
+.rgdx2array <- function(x, magpie_cells=TRUE) {
   if(length(x$domains)==0) {
     if(length(x$val)==0) x$val <- 0
     out <- as.vector(x$val)  
@@ -115,13 +119,20 @@ readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables",
       out[as.matrix(x$val[,-ncol(x$val)])] <- x$val[,ncol(x$val)]
     }
   }
+  
+  #special treatment of set "j" -> replace underscores with dots!
+  if(magpie_cells) {
+    elem_j <- which(names(dim(out))=="j")
+    if(length(elem_j)==1) dimnames(out)[[elem_j]] <- sub("_",".",dimnames(out)[[elem_j]])
+  }
+  
   #add additional information as attribute
   attr(out,"gdxdata") <- x[!names(x)%in%c("val","uels","dim","ts")] 
   attr(out,"description") <- x$ts
   return(out)
 }
 
-.rgdx2dataframe <- function(x,restore_zeros=FALSE) {
+.rgdx2dataframe <- function(x,restore_zeros=FALSE, magpie_cells=TRUE) {
   if(length(x$domains)==0) {
     if(length(x$val)==0) x$val <- 0
     out <- as.vector(x$val)  
@@ -144,6 +155,12 @@ readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables",
     }
     out <- x$val
   }
+  
+  #special treatment of set "j" -> replace underscores with dots!
+  if(magpie_cells && length(out$j)>0) {
+    out$j <- sub("_",".",out$j)
+  }
+  
   #add additional information as attribute
   attr(out,"gdxdata") <- x[!names(x)%in%c("val","uels","dim","ts")] 
   attr(out,"description") <- x$ts
@@ -199,9 +216,9 @@ readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables",
       attr(tmp2,"description") <- tmp2$ts
       if(format!="raw" & t!="aliases") {
         if(restore_zeros & t!="sets") {
-          tmp2 <- .rgdx2array(tmp2)
+          tmp2 <- .rgdx2array(tmp2, magpie_cells=magpie_cells)
         } else {
-          tmp2 <- .rgdx2dataframe(tmp2)
+          tmp2 <- .rgdx2dataframe(tmp2, magpie_cells=magpie_cells)
         }
         if(t!="sets") {
           tmp2 <- as.magpie(tmp2,tidy=TRUE)

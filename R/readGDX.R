@@ -293,7 +293,6 @@ readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables",
       if(n %in% names(out)){
         x <- out[[n]]
         assigned=TRUE
-        if(n != first_name & react!="silent") warning(first_name," not found in GDX! ", n , " returned")
         break
       }
       if(assigned==TRUE) break

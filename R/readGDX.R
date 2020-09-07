@@ -109,6 +109,12 @@ readGDX <- function(gdx,...,types=c("sets","equations","parameters","variables",
     for(i in 1:length(x$domains)) {
       x$val[,i] <- x$uels[[i]][x$val[,i]]
       if(x$domains[i]=="*") dimnames[[i]] <- unique(x$val[,i])
+      if(x$domInfo=="relaxed") {
+        # in case of domInfo==relaxed dimension all reported dimensions
+        # contain all elements. Real dimension elements need to be
+        # estimated.
+       dimnames[[i]] <- unique(x$val[,i] )
+      }
     }
     if(x$type=="set") {
       if(x$dim==1) colnames(x$val) <- x$name

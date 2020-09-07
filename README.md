@@ -1,26 +1,22 @@
-# gdx package
+# Interface package for GDX files in R
+
+R package **gdx**, version **1.51.1**
+
+[![Travis build status](https://travis-ci.com/pik-piam/gdx.svg?branch=master)](https://travis-ci.com/pik-piam/gdx) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158598.svg)](https://doi.org/10.5281/zenodo.1158598) 
 
 ## Purpose and Functionality
 
-The gdx package is a wrapper package for the gdxrrw R package distributed with GAMS. It tries to extend and simplify the access to gdx files from the original package.
+A wrapper package for the gdxrrw extending its functionality and allowing to read and write GDX files directly in R.
+
 
 ## Installation
 
-Before the `gdx` package can be installed `gdxrrw` needs to be installed. 
-
-```r
-download.file("https://support.gams.com/_media/gdxrrw:gdxrrw_1.0.2.zip",
-              "gdxrrw_1.0.2.zip")
-install.packages("gdxrrw_1.0.2.zip",repos = NULL)
-```
-
-For installation of the most recent package version an additional repository can be added in R:
+For installation of the most recent package version an additional repository has to be added in R:
 
 ```r
 options(repos = c(CRAN = "@CRAN@", pik = "https://rse.pik-potsdam.de/r/packages"))
 ```
-
-The additional repository can be made availably permanently by adding the line above to a file called `.Rprofile` stored in the home folder of your system (`Sys.glob("~")` in R returns the home directory).
+The additional repository can be made available permanently by adding the line above to a file called `.Rprofile` stored in the home folder of your system (`Sys.glob("~")` in R returns the home directory).
 
 After that the most recent version of the package can be installed using `install.packages`:
 
@@ -36,11 +32,26 @@ update.packages()
 
 ## Questions / Problems
 
-In case of questions / problems please contact Jan Dietrich <dietrich@pik-potsdam.de>.
+In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pik-potsdam.de>.
 
+## Citation
 
-## Citation 
+To cite package **gdx** in publications use:
 
-[![DOI](https://zenodo.org/badge/117549288.svg)](https://zenodo.org/badge/latestdoi/117549288)
+Dietrich J, Giannousakis A, Bonsch M (2020). _gdx: Interface package for GDX files in R_. doi:
+10.5281/zenodo.1158598 (URL: https://doi.org/10.5281/zenodo.1158598), R package version 1.51.1,
+<URL: https://github.com/pik-piam/gdx>.
 
+A BibTeX entry for LaTeX users is
+
+ ```latex
+@Manual{,
+  title = {gdx: Interface package for GDX files in R},
+  author = {Jan Philipp Dietrich and Anastasis Giannousakis and Markus Bonsch Bonsch},
+  year = {2020},
+  note = {R package version 1.51.1},
+  doi = {10.5281/zenodo.1158598},
+  url = {https://github.com/pik-piam/gdx},
+}
+```
 

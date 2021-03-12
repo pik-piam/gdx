@@ -1,8 +1,8 @@
 # Interface package for GDX files in R
 
-R package **gdx**, version **1.51.1**
+R package **gdx**, version **1.51.2**
 
-[![Travis build status](https://travis-ci.com/pik-piam/gdx.svg?branch=master)](https://travis-ci.com/pik-piam/gdx) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158598.svg)](https://doi.org/10.5281/zenodo.1158598) 
+[![CRAN status](https://www.r-pkg.org/badges/version/gdx)](https://cran.r-project.org/package=gdx) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158598.svg)](https://doi.org/10.5281/zenodo.1158598)  [![R build status](https://github.com/pik-piam/gdx/workflows/check/badge.svg)](https://github.com/pik-piam/gdx/actions) [![codecov](https://codecov.io/gh/pik-piam/gdx/branch/master/graph/badge.svg)](https://codecov.io/gh/pik-piam/gdx)
 
 ## Purpose and Functionality
 
@@ -38,9 +38,9 @@ In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pi
 
 To cite package **gdx** in publications use:
 
-Dietrich J, Giannousakis A, Bonsch M (2020). _gdx: Interface package for GDX files in R_. doi:
-10.5281/zenodo.1158598 (URL: https://doi.org/10.5281/zenodo.1158598), R package version 1.51.1,
-<URL: https://github.com/pik-piam/gdx>.
+Dietrich J, Giannousakis A, Bonsch M (2021). _gdx: Interface package for GDX files in
+R_. doi: 10.5281/zenodo.1158598 (URL: https://doi.org/10.5281/zenodo.1158598), R package
+version 1.51.2, <URL: https://github.com/pik-piam/gdx>.
 
 A BibTeX entry for LaTeX users is
 
@@ -48,8 +48,8 @@ A BibTeX entry for LaTeX users is
 @Manual{,
   title = {gdx: Interface package for GDX files in R},
   author = {Jan Philipp Dietrich and Anastasis Giannousakis and Markus Bonsch Bonsch},
-  year = {2020},
-  note = {R package version 1.51.1},
+  year = {2021},
+  note = {R package version 1.51.2},
   doi = {10.5281/zenodo.1158598},
   url = {https://github.com/pik-piam/gdx},
 }

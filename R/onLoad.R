@@ -14,5 +14,5 @@
 	  }
   }
 	sink()
-	if(!ok) warning(paste(tmp,collapse = "\n"))
+	if(!ok) packageStartupMessage(paste(tmp,collapse = "\n"))
 }

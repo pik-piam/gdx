@@ -10,6 +10,7 @@ Authors@R: c(person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de"
             )
 Description: A wrapper package for the gdxrrw extending its functionality and allowing to read and write GDX files directly in R.
 Depends: gdxrrw, magclass(>= 2.43)
+Remotes: git::https://github.com/GAMS-dev/gdxrrw.git@master
 URL: https://github.com/pik-piam/gdx, https://doi.org/10.5281/zenodo.1158598
 BugReports: https://github.com/pik-piam/gdx/issues
 License: BSD_2_clause + file LICENSE

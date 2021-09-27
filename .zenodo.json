@@ -1,6 +1,6 @@
 {
   "title": "gdx: Interface package for GDX files in R",
-  "version": "1.51.3",
+  "version": "1.51.4",
   "description": "<p>A wrapper package for the gdxrrw extending its functionality and allowing to read and write GDX files directly in R.<\/p>",
   "creators": [
     {

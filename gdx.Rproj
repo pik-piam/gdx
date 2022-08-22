@@ -15,3 +15,5 @@ LaTeX: pdfLaTeX
 BuildType: Package
 PackageInstallArgs: --no-multiarch --with-keep.source
 PackageRoxygenize: rd,collate,namespace
+AutoAppendNewline: Yes
+StripTrailingWhitespace: Yes

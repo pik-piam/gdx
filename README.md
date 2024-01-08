@@ -1,8 +1,8 @@
 # Interface package for GDX files in R
 
-R package **gdx**, version **1.51.5**
+R package **gdx**, version **1.51.6**
 
-[![CRAN status](https://www.r-pkg.org/badges/version/gdx)](https://cran.r-project.org/package=gdx) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158598.svg)](https://doi.org/10.5281/zenodo.1158598) [![R build status](https://github.com/pik-piam/gdx/workflows/check/badge.svg)](https://github.com/pik-piam/gdx/actions) [![codecov](https://codecov.io/gh/pik-piam/gdx/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/gdx) [![r-universe](https://pik-piam.r-universe.dev/badges/gdx)](https://pik-piam.r-universe.dev/ui#builds)
+[![CRAN status](https://www.r-pkg.org/badges/version/gdx)](https://cran.r-project.org/package=gdx) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158598.svg)](https://doi.org/10.5281/zenodo.1158598) [![R build status](https://github.com/pik-piam/gdx/workflows/check/badge.svg)](https://github.com/pik-piam/gdx/actions) [![codecov](https://codecov.io/gh/pik-piam/gdx/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/gdx) [![r-universe](https://pik-piam.r-universe.dev/badges/gdx)](https://pik-piam.r-universe.dev/builds)
 
 ## Purpose and Functionality
 
@@ -38,7 +38,7 @@ In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pi
 
 To cite package **gdx** in publications use:
 
-Dietrich J, Giannousakis A, Bonsch M (2022). _gdx: Interface package for GDX files in R_. doi:10.5281/zenodo.1158598 <https://doi.org/10.5281/zenodo.1158598>, R package version 1.51.5, <https://github.com/pik-piam/gdx>.
+Dietrich J, Giannousakis A, Bonsch M (2024). _gdx: Interface package for GDX files in R_. doi: 10.5281/zenodo.1158598 (URL: https://doi.org/10.5281/zenodo.1158598), R package version 1.51.6, <URL: https://github.com/pik-piam/gdx>.
 
 A BibTeX entry for LaTeX users is
 
@@ -46,8 +46,8 @@ A BibTeX entry for LaTeX users is
 @Manual{,
   title = {gdx: Interface package for GDX files in R},
   author = {Jan Philipp Dietrich and Anastasis Giannousakis and Markus Bonsch Bonsch},
-  year = {2022},
-  note = {R package version 1.51.5},
+  year = {2024},
+  note = {R package version 1.51.6},
   doi = {10.5281/zenodo.1158598},
   url = {https://github.com/pik-piam/gdx},
 }

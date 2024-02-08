@@ -11,6 +11,8 @@ Description: A wrapper package for the gdxrrw extending its functionality and al
 Depends:
   gdxrrw(>= 1.0.2),
   magclass(>= 2.43)
+Imports:
+  withr
 Suggests: 
   covr
 URL:

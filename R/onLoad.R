@@ -1,18 +1,16 @@
-#' @importFrom gdxrrw igdx 
+#' @importFrom gdxrrw igdx
 .onLoad <- function(libname, pkgname){
-  #Set path to GAMS installation
-  delimiter <- ifelse(Sys.info()["sysname"]=="Windows",";",":")
-  gamspath <- grep("gams",strsplit(Sys.getenv("PATH"),delimiter)[[1]],value=TRUE,ignore.case=TRUE)
-	gamspath <- grep("%",gamspath,value=TRUE,invert=TRUE)
-	tmp <- NULL
-	ok <- FALSE
-	sink(textConnection("tmp","w",local=TRUE))
-  for(path in gamspath){
-	  if(igdx(path)==1) {
-	    ok <- TRUE
-	    break
-	  }
+  tmp <- NULL
+  sink(textConnection("tmp", "w", local = TRUE))
+
+  # make igdx try an empty path to load GDX libraries, which will fail and
+  # igdx will try the path and library search mechanisms in turn
+  ok <- as.logical(igdx(""))
+  sink()
+
+  if (!ok) {
+    # truncate igdx output to 132 characters per line
+    tmp <- paste0(strtrim(tmp, 129), c('', '...')[(nchar(tmp) > 132) + 1])
+    packageStartupMessage(paste(tmp, collapse = "\n"))
   }
-	sink()
-	if(!ok) packageStartupMessage(paste(tmp,collapse = "\n"))
 }

@@ -12,7 +12,7 @@ Depends:
   gdxrrw(>= 1.0.2),
   magclass(>= 2.43)
 Imports:
-  withr
+  utils
 Suggests: 
   covr
 URL:

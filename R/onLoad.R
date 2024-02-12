@@ -1,18 +1,29 @@
-#' @importFrom gdxrrw igdx 
-.onLoad <- function(libname, pkgname){
-  #Set path to GAMS installation
-  delimiter <- ifelse(Sys.info()["sysname"]=="Windows",";",":")
-  gamspath <- grep("gams",strsplit(Sys.getenv("PATH"),delimiter)[[1]],value=TRUE,ignore.case=TRUE)
-	gamspath <- grep("%",gamspath,value=TRUE,invert=TRUE)
-	tmp <- NULL
-	ok <- FALSE
-	sink(textConnection("tmp","w",local=TRUE))
-  for(path in gamspath){
-	  if(igdx(path)==1) {
-	    ok <- TRUE
-	    break
-	  }
+#' @importFrom gdxrrw igdx
+#' @importFrom utils capture.output
+.onLoad <- function(libname, pkgname) {
+  path <- strsplit(Sys.getenv("PATH"), .Platform$path.sep, fixed = TRUE)[[1]]
+  path <- grep("gams", path, ignore.case = TRUE, value = TRUE)
+  # disregard variables on the Windows path
+  path <- grep("%", path, value = TRUE, fixed = TRUE, invert = TRUE)
+
+  # append GAMSROOT (or empty if that does not exist) to make sure igdx is
+  # called at least once
+  path <- c(path, Sys.getenv("GAMSROOT"))
+
+  for (p in path) {
+    msg <- capture.output(ok <- as.logical(igdx(p)))
+    if (ok)
+      break
   }
-	sink()
-	if(!ok) packageStartupMessage(paste(tmp,collapse = "\n"))
+
+  if (!ok) {
+    # truncate igdx output to 132 characters per line
+    msg <- paste0(strtrim(msg, 129), c("", "...")[(nchar(msg) > 132) + 1])
+
+    # R CMD check fails if packageStartupMessage() returns a string containing
+    # "error" ...
+    msg <- sub("^Error", "Problem", msg)
+
+    packageStartupMessage(paste(msg, collapse = "\n"))
+  }
 }

@@ -1,25 +1,27 @@
-Package: gdx
 Type: Package
+Package: gdx
 Title: Interface package for GDX files in R
 Version: 1.52.0
 Date: 2024-02-12
-Authors@R: c(person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
-             person("Anastasis", "Giannousakis", email = "giannou@pik-potsdam.de", role = "aut"),
-             person("Markus Bonsch", "Bonsch", role = c("aut")),
-             person("Lavinia Baumstark", "Baumstark", email = "baumstark@pik-potsdam.de", role = c("ctb")))
-Description: A wrapper package for the gdxrrw extending its functionality and allowing to read and write GDX files directly in R.
-Depends:
-  gdxrrw(>= 1.0.2),
-  magclass(>= 2.43)
-Imports:
-  utils
-Suggests: 
-  covr
-URL:
-  https://github.com/pik-piam/gdx,
-  https://doi.org/10.5281/zenodo.1158598
-BugReports: https://github.com/pik-piam/gdx/issues
+Authors@R: c(
+    person("Jan Philipp", "Dietrich", , "dietrich@pik-potsdam.de", role = c("aut", "cre")),
+    person("Anastasis", "Giannousakis", , "giannou@pik-potsdam.de", role = "aut"),
+    person("Markus Bonsch", "Bonsch", role = "aut"),
+    person("Lavinia Baumstark", "Baumstark", , "baumstark@pik-potsdam.de", role = "ctb")
+  )
+Description: A wrapper package for the gdxrrw extending its functionality
+    and allowing to read and write GDX files directly in R.
 License: BSD_2_clause + file LICENSE
+URL:https://github.com/pik-piam/gdx,
+    https://doi.org/10.5281/zenodo.1158598
+BugReports: https://github.com/pik-piam/gdx/issues
+Depends:
+    gdxrrw (>= 1.0.2),
+    magclass (>= 2.43)
+Imports:
+    utils
+Suggests: 
+    covr
 Encoding: UTF-8
 LazyData: yes
 RoxygenNote: 7.3.1

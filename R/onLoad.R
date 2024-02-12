@@ -19,6 +19,11 @@
   if (!ok) {
     # truncate igdx output to 132 characters per line
     msg <- paste0(strtrim(msg, 129), c("", "...")[(nchar(msg) > 132) + 1])
+
+    # R CMD check fails if packageStartupMessage() returns a string containing
+    # "error" ...
+    msg <- sub("^Error", "Problem", msg)
+
     packageStartupMessage(paste(msg, collapse = "\n"))
   }
 }

@@ -73,6 +73,12 @@
 #' in does not exist. Available options are "warning" (NULL is returned and a
 #' warning is send that the object is missing), "silent" (NULL is returned, but
 #' no warning is given) and "error" (The function throws out an error)
+#' @param spatial argument to determine the spatial columns in the dataframe to
+#' be converted to a magclass object. Defaults to NULL.
+#' See \code{\link[magclass]{as.magpie}} for more information.
+#' @param temporal argument to determine the temporal columns in the dataframe to
+#' be converted to a magclass object. Defaults to NULL.
+#' See \code{\link[magclass]{as.magpie}} for more information.
 #' @param select preselection of subsets in the data coming from the gdx using
 #' the function \code{\link[magclass]{mselect}}. Information has to be provided
 #' as a list of selections (e.g. \code{select=list(type="level")}). See
@@ -97,7 +103,8 @@
 #'
 readGDX <- function(gdx, ..., types = c("sets", "equations", "parameters", "variables", "aliases"),
                     field = "All", format = "simplest", restore_zeros = TRUE, react = "warning",
-                    select = NULL, collapseNames = TRUE, magpie_cells = TRUE) {
+                    spatial = NULL, temporal = NULL, select = NULL, collapseNames = TRUE,
+                    magpie_cells = TRUE) {
 
   .rgdx2array <- function(x, magpie_cells = TRUE) {
     if (length(x$domains) == 0) {
@@ -228,7 +235,7 @@ readGDX <- function(gdx, ..., types = c("sets", "equations", "parameters", "vari
             tmp2 <- .rgdx2dataframe(tmp2, magpie_cells = magpie_cells)
           }
           if (t != "sets") {
-            tmp2 <- as.magpie(tmp2, tidy = TRUE)
+            tmp2 <- as.magpie(tmp2, spatial = spatial, temporal = temporal, tidy = TRUE)
             if (!is.null(select)) {
               tmp2 <- mselect(tmp2, select, collapseNames = collapseNames)
             }

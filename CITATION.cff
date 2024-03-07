@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using the metadata from this file.
 type: software
 title: 'gdx: Interface package for GDX files in R'
-version: 1.52.0
-date-released: '2024-02-12'
+version: 1.53.0
+date-released: '2024-03-07'
 abstract: A wrapper package for the gdxrrw extending its functionality and allowing
   to read and write GDX files directly in R.
 authors:

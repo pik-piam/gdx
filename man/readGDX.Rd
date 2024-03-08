@@ -12,6 +12,8 @@ readGDX(
   format = "simplest",
   restore_zeros = TRUE,
   react = "warning",
+  spatial = NULL,
+  temporal = NULL,
   select = NULL,
   collapseNames = TRUE,
   magpie_cells = TRUE
@@ -94,6 +96,14 @@ in does not exist. Available options are "warning" (NULL is returned and a
 warning is send that the object is missing), "silent" (NULL is returned, but
 no warning is given) and "error" (The function throws out an error)}
 
+\item{spatial}{argument to determine the spatial columns in the dataframe to
+be converted to a magclass object. Defaults to NULL.
+See \code{\link[magclass]{as.magpie}} for more information.}
+
+\item{temporal}{argument to determine the temporal columns in the dataframe to
+be converted to a magclass object. Defaults to NULL.
+See \code{\link[magclass]{as.magpie}} for more information.}
+
 \item{select}{preselection of subsets in the data coming from the gdx using
 the function \code{\link[magclass]{mselect}}. Information has to be provided
 as a list of selections (e.g. \code{select=list(type="level")}). See
@@ -104,7 +114,7 @@ be applied in \code{\link[magclass]{mselect}} or not.}
 
 \item{magpie_cells}{(boolean) determines whether a set "j" gets special treatment
 by replacing underscores in the set elements with dots. Active by default for
-historical reasons. Can be ignored in most cases. Makes only a difference, if 
+historical reasons. Can be ignored in most cases. Makes only a difference, if
 1) GDX element depends on set "j", 2) set "j" contains underscores.}
 }
 \value{
@@ -116,10 +126,9 @@ Function to read gdx files in R. It is partly a reimplementation of readGDX
 which is now based on magclass structures rather than array structures.
 }
 \examples{
-
-\dontrun{readGDX("bla.gdx","blub*")}
-
-
+\dontrun{
+readGDX("bla.gdx", "blub*")
+}
 
 }
 \seealso{

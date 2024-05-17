@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Jan Philipp Dietrich \email{dietrich@pik-potsdam.de}
+\strong{Maintainer}: Jan Philipp Dietrich \email{dietrich@pik-potsdam.de} (\href{https://orcid.org/0000-0002-4309-6431}{ORCID}) (Potsdam Institute for Climate Impact Research)
 
 Authors:
 \itemize{
@@ -28,7 +28,7 @@ Authors:
 
 Other contributors:
 \itemize{
-  \item Lavinia Baumstark Baumstark \email{baumstark@pik-potsdam.de} [contributor]
+  \item Lavinia Baumstark Baumstark \email{baumstark@pik-potsdam.de} (Potsdam Institute for Climate Impact Research) [contributor]
 }
 
 }

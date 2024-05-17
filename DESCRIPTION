@@ -1,13 +1,15 @@
 Type: Package
 Package: gdx
 Title: Interface package for GDX files in R
-Version: 1.53.0
-Date: 2024-03-07
+Version: 1.53.1
+Date: 2024-05-17
 Authors@R: c(
-    person("Jan Philipp", "Dietrich", , "dietrich@pik-potsdam.de", role = c("aut", "cre")),
+    person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", 
+    comment = c(affiliation = "Potsdam Institute for Climate Impact Research", ORCID = "0000-0002-4309-6431"), role = c("aut","cre")),
     person("Anastasis", "Giannousakis", , "giannou@pik-potsdam.de", role = "aut"),
     person("Markus Bonsch", "Bonsch", role = "aut"),
-    person("Lavinia Baumstark", "Baumstark", , "baumstark@pik-potsdam.de", role = "ctb")
+    person("Lavinia Baumstark", "Baumstark", , "baumstark@pik-potsdam.de",
+    comment = c(affiliation = "Potsdam Institute for Climate Impact Research"), role = "ctb")
   )
 Description: A wrapper package for the gdxrrw extending its functionality
     and allowing to read and write GDX files directly in R.
@@ -25,3 +27,4 @@ Suggests:
 Encoding: UTF-8
 LazyData: yes
 RoxygenNote: 7.3.1
+Config/Keywords: tool
